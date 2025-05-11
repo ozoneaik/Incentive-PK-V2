@@ -12,6 +12,14 @@
     font-family: 'sarabun' !important;
 }
 
-td,th{
-    border : 1px solid rgba(224, 224, 224, 1);
+th {
+    font-weight: bold;
+    background-color: #007bff;
+}
+
+td,
+th {
+    
+    white-space: nowrap;
+    border: 1px solid rgba(224, 224, 224, 1);
 }

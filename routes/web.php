@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductQcController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\WorkDayController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -26,6 +27,10 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('/product')->group(function(){
         Route::get('/', [ProductQcController::class,'index'])->name('product.index');
+    });
+
+    Route::prefix('work-day')->group(function(){
+        Route::get('/',[WorkDayController::class,'index'])->name('workday.index');
     });
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

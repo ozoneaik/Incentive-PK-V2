@@ -39,7 +39,7 @@ export default function AuthenticatedLayout({ children, breadcrumbs = [], headPa
                                 md: 'calc(100vh - 140px)'
                             }} sx={{ overflowY: 'auto' }}
                         >
-                            <Card variant='outlined' sx={{p : 3,borderTop : '4px solid #f25822'}}>
+                            <Card variant='outlined' sx={{p : 3,borderTop : '4px solid #f25822',overflow : 'auto'}}>
                                 {children}
                             </Card>
                         </Box>
