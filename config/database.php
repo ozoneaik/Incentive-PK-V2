@@ -111,6 +111,20 @@ return [
             // 'encrypt' => env('DB_ENCRYPT', 'yes'),
             // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
         ],
+        'pgsql_port_30' => [
+            'driver' => 'pgsql',
+            'url' => env('DB_URL'),
+            'host' => env('DB_HOST_CLIENT', '127.0.0.1'),
+            'port' => env('DB_PORT_CLIENT', '5432'),
+            'database' => env('DB_DATABASE_CLIENT', 'laravel'),
+            'username' => env('DB_USERNAME_CLIENT', 'root'),
+            'password' => env('DB_PASSWORD_CLIENT', ''),
+            'charset' => env('DB_CHARSET', 'utf8'),
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'search_path' => 'public',
+            'sslmode' => 'prefer',
+        ],
 
     ],
 

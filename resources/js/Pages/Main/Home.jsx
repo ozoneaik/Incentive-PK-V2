@@ -15,7 +15,7 @@ export default function Home({ year_list = [{ label: 2023 }] }) {
             <Grid container spacing={2} >
                 <Grid size={12}>
                     <Stack direction='row' justifyContent='center' alignItems='center' spacing={2}>
-                        <Select size="small" defaultValue={'2023'}> 
+                        <Select variant='outlined' size="small" defaultValue={'2023'}>
                             {year_list.map((year, index) => (
                                 <MenuItem value={year.label} key={index}>
                                     {year.label}

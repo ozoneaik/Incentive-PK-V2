@@ -3,7 +3,7 @@ import { Head } from "@inertiajs/react";
 import { Add } from "@mui/icons-material";
 import {
     Button, Chip, Grid, MenuItem, Select, Stack, Table,
-    TableBody, TableCell, TableHead, TableRow, TextField
+    TableBody, TableCell, TableHead, TableRow,
 } from "@mui/material";
 
 export default function WdList() {
@@ -13,10 +13,10 @@ export default function WdList() {
             <Grid container spacing={2}>
                 <Grid size={12}>
                     <Stack direction='row' justifyContent='center' spacing={2}>
-                        <Select size="small" value={' '}>
+                        <Select variant='outlined' size="small" value={' '}>
                             <MenuItem value={' '}>เลือก</MenuItem>
                         </Select>
-                        <Button size="small" variant="contained" startIcon={<Add/>}>เพิ่มปี</Button>
+                        <Button size="small" variant="contained" startIcon={<Add />}>เพิ่มปี</Button>
                     </Stack>
                 </Grid>
                 <Grid size={12}>

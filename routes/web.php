@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\ProductQcController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\QualityControlGradeController;
+use App\Http\Controllers\QualityControlLevelController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\WorkDayController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -31,6 +34,18 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('work-day')->group(function(){
         Route::get('/',[WorkDayController::class,'index'])->name('workday.index');
+    });
+
+    Route::prefix('quality-control-grade')->group(function(){
+        Route::get('/',[QualityControlGradeController::class,'index'])->name('quality-control-grade.index');
+    });
+
+    Route::prefix('quality-control-level')->group(function(){
+        Route::get('/',[QualityControlLevelController::class,'index'])->name('quality-control-level.index');
+    });
+
+    Route::prefix('qc-log')->group(function (){
+        Route::get('/local',[ReportController::class,'LogLocal'])->name('report.local');
     });
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

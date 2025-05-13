@@ -14,9 +14,9 @@ const mainListItems = [
     { text: 'INCENTIVE QC', icon: <RequestQuote />, path: 'home' },
     { text: 'ข้อมูลสินค้า QC', icon: <Inventory2 />, path: 'product.index' },
     { text: 'จำนวนวันทำงาน', icon: <CalendarMonth />, path: 'workday.index' },
-    { text: 'ข้อมูลระดับการ QC', icon: <Storage />, path: 'home3' },
-    { text: 'ข้อมูลเกณฑ์คำนวณ', icon: <HdrAuto />, path: 'home4' },
-    { text: 'รายงาน', icon: <Description />, path: 'home5' },
+    { text: 'ข้อมูลระดับการ QC', icon: <Storage />, path: 'quality-control-grade.index' },
+    { text: 'ข้อมูลเกณฑ์คำนวณ', icon: <HdrAuto />, path: 'quality-control-level.index' },
+    { text: 'รายงาน', icon: <Description />, path: 'report.local' },
 ];
 
 const secondaryListItems = [
