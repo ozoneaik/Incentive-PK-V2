@@ -16,10 +16,10 @@ const Detail = ({ Label, value, status = false }) => (
     </Stack>
 )
 
-export default function ListQcMobile({ listMock = [] }) {
+export default function ListQcMobile({ list = [] }) {
     return (
         <Stack direction='column' spacing={2}>
-            {listMock.map((item, index) => (
+            {list && list.map((item, index) => (
                 <Card key={index} sx={{ p: 1 }} variant="outlined">
                     <Stack direction='column' spacing={1}>
                         <Detail Label={'ปี'} value={item.name} />

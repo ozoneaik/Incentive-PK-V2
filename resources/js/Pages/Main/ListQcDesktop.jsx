@@ -3,7 +3,9 @@ import {
     Button, Chip,Table, TableBody, TableCell, TableHead, TableRow,
 } from "@mui/material";
 
-export default function ListQcDesktop({listMock=[]}) {
+export default function ListQcDesktop({list}) {
+    console.log(typeof list);
+    
     return (
         <Table sx={{ border: '1px solid rgba(224, 224, 224, 1)' }}>
             <TableHead >
@@ -20,9 +22,9 @@ export default function ListQcDesktop({listMock=[]}) {
                 </TableRow>
             </TableHead>
             <TableBody>
-                {listMock.map((item, index) => (
+                {list && list.map((item, index) => (
                     <TableRow key={index}>
-                        <TableCell>{item.name}</TableCell>
+                        <TableCell>{item.Kmonth}</TableCell>
                         <TableCell align="center">
                             <Chip
                                 size="small" color="primary"
@@ -31,7 +33,7 @@ export default function ListQcDesktop({listMock=[]}) {
                         </TableCell>
                         <TableCell>8</TableCell>
                         <TableCell>26</TableCell>
-                        <TableCell>27,462</TableCell>
+                        <TableCell>{item.k_month_count}</TableCell>
                         <TableCell>{new Date().toLocaleString('th-TH')}</TableCell>
                         <TableCell>
                             HR ส่งคำขออนุมัติเมื่อ 2025-02-15 08:50:17

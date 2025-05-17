@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\base\QcBaseController;
 use App\Http\Controllers\ProductQcController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\qc\QcController;
 use App\Http\Controllers\QualityControlGradeController;
 use App\Http\Controllers\QualityControlLevelController;
 use App\Http\Controllers\ReportController;
@@ -28,6 +30,8 @@ Route::middleware('auth')->group(function () {
         return Inertia::render('Main/Home');
     })->name('home');
 
+    Route::get('/qc', [QcController::class, 'index'])->name('qc.index');
+
     Route::prefix('/product')->group(function(){
         Route::get('/', [ProductQcController::class,'index'])->name('product.index');
     });
@@ -52,5 +56,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::get('/qc_log', [QcBaseController::class,'test'])->name('qc_log.index');
 
 require __DIR__ . '/auth.php';
