@@ -27,6 +27,7 @@
         "@mui/icons-material": "^7.1.0",
         "@mui/material": "^7.1.0",
         "@mui/x-date-pickers": "^8.3.0",
-        "dayjs": "^1.11.13"
+        "dayjs": "^1.11.13",
+        "prop-types": "^15.8.1"
     }
 }

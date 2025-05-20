@@ -38,6 +38,7 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('work-day')->group(function(){
         Route::get('/',[WorkDayController::class,'index'])->name('workday.index');
+        Route::post('/',[WorkDayController::class,'store'])->name('workday.store');
     });
 
     Route::prefix('quality-control-grade')->group(function(){

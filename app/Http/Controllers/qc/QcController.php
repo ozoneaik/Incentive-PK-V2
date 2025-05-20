@@ -12,29 +12,26 @@ class QcController extends Controller
 {
     public function index(Request $request)
     {
+        $year_now = Carbon::now()->year;
+        $month_now = Carbon::now()->month;
+
         if (isset($request->year)) {
             $year = $request->year;
         } else {
             $year = Carbon::now()->format('Y');
         }
-        $QcBaseMOdel = new QcBaseModel();
-        $list = $QcBaseMOdel->getCountQcLogOfYearMonth($year);
+        $QcBase_Model = new QcBaseModel();
         $listReal = [];
-        for ($i = 1; $i <= 12; $i++) {
-            $m_count = 0;
-            $month = $i;
-            foreach ($list as $item) {
-                // dd($item->kMonth,$i);
-                if ($item->kMonth === $i) {
-                    $month = $item->kMonth;
-                    $m_count = $item->k_month_count;
-                    break;
-                }
-            }
-            $listReal[] = [
-                'Kmonth' => $month,
-                'k_month_count' => $m_count,
-            ];
+        for ($month = 1; $month <= 12; $month++) {
+            if ($year == $year_now) {
+                if ($month_now > $month) {
+                    $target = $QcBase_Model->getCountQcLogOfYearMonth($year, $month);
+                }else $target = 0;
+            }elseif ($year_now > $year) {
+                $target = $QcBase_Model->getCountQcLogOfYearMonth($year, $month);
+            }else $target = 0;
+            $listReal[$month - 1]['k_month_count'] = $target ?? 0;
+            $listReal[$month - 1]['k_month'] = $month;
         }
         return response()->json([
             'list' => $listReal,

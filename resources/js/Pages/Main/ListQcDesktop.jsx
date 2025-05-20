@@ -5,7 +5,7 @@ import {
 
 export default function ListQcDesktop({list}) {
     console.log(typeof list);
-    
+
     return (
         <Table sx={{ border: '1px solid rgba(224, 224, 224, 1)' }}>
             <TableHead >
@@ -24,7 +24,7 @@ export default function ListQcDesktop({list}) {
             <TableBody>
                 {list && list.map((item, index) => (
                     <TableRow key={index}>
-                        <TableCell>{item.Kmonth}</TableCell>
+                        <TableCell>{item.k_month}</TableCell>
                         <TableCell align="center">
                             <Chip
                                 size="small" color="primary"
